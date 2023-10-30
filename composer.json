@@ -1,0 +1,62 @@
+{
+    "name": "oriceon/laravel-html",
+    "description": "HTML and Form Builders for the Laravel Framework",
+    "license": "MIT",
+    "homepage": "https://www.valentinivascu.ro",
+    "support": {
+        "issues": "https://github.com/oriceon/laravel-html/issues",
+        "source": "https://github.com/oriceon/laravel-html"
+    },
+    "authors": [
+        {
+            "name": "Adam Engebretson",
+            "email": "adam@laravelcollective.com"
+        },
+        {
+            "name": "Taylor Otwell",
+            "email": "taylorotwell@gmail.com"
+        },
+        {
+            "name": "Valentin Ivașcu",
+            "email": "oriceon@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1.0",
+        "illuminate/http": "^10.0",
+        "illuminate/routing": "^10.0",
+        "illuminate/session": "^10.0",
+        "illuminate/support": "^10.0",
+        "illuminate/view": "^10.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "illuminate/database": "^10.0",
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oriceon\\Html\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Oriceon\\Html\\HtmlServiceProvider"
+            ],
+            "aliases": {
+                "Form": "Oriceon\\Html\\FormFacade",
+                "Html": "Oriceon\\Html\\HtmlFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
