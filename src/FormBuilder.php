@@ -599,7 +599,7 @@ class FormBuilder
     protected function getSelectedValue(mixed $value, mixed $selected = null): mixed
     {
         if (is_array($selected)) {
-            return in_array($value, $selected, true) || in_array((string) $value, $selected, true) ? 'selected' : null;
+            return in_array($value, $selected, false) || in_array((string) $value, $selected, false) ? 'selected' : null;
         }
 
         if ($selected instanceof Collection) {
@@ -675,7 +675,7 @@ class FormBuilder
         $posted = $this->getValueAttribute($name, $checked);
 
         if (is_array($posted)) {
-            return in_array($value, $posted, true);
+            return in_array($value, $posted, false);
         }
 
         if ($posted instanceof Collection) {
@@ -1025,7 +1025,7 @@ class FormBuilder
                 return $payload;
             }
 
-            if ( ! in_array($this->type, ['select', 'checkbox'])) {
+            if ( ! in_array($this->type, ['select', 'checkbox'], true)) {
                 if ( ! isset($this->payload[$key])) {
                     $this->payload[$key] = collect($payload);
                 }
