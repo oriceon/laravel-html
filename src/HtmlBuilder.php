@@ -78,7 +78,7 @@ class HtmlBuilder
     /**
      * Generate Html image element.
      */
-    public function image(string $url, string $alt = null, array $attributes = [], ?bool $secure = null): HtmlString
+    public function image(string $url, ?string $alt = null, array $attributes = [], ?bool $secure = null): HtmlString
     {
         $attributes['alt'] = $alt;
 
